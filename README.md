@@ -1,5 +1,8 @@
 # Introducción a SVG
 
+## Slides
+Se pueden ver en [spacenomads.github.io/introduccion-svg/](https://spacenomads.github.io/introduccion-svg/)
+
 ## Índice
 1. Qué es SVG
 2. Cómo es un SVG
