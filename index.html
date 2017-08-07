@@ -104,18 +104,16 @@
 											<svg class="fa-twitter">
 												<use xlink:href="#fa-twitter"></use>
 											</svg>
-										</span>
-										 &nbsp;<a href="https://twitter.com/oneeyedman">@oneeyedman</a>
+										</span>&nbsp;&nbsp;<a href="https://twitter.com/oneeyedman">@oneeyedman</a>
 									</h2>
 							</li>
 							<li>
-								<h2 style="font-weight: normal">
+								<h2 style="font-weight: normal;">
 								<span>
 									<svg class="fa-envelope">
 										<use xlink:href="#fa-envelope"></use>
 									</svg>
-								</span>
-								 &nbsp;<a href="mailto:carlos@spacenomads.com">carlos@spacenomads.com</a>
+								</span>&nbsp;&nbsp;<a href="mailto:carlos@spacenomads.com">carlos@spacenomads.com</a>
 								</h2>
 							</li>
 						</ul>
@@ -127,9 +125,46 @@
 					<!--.wrap = container (width: 90%) -->
 					<div class="wrap aligncenter">
 						<h2>Qué es SVG</h2>
-						<p>Es un formato de imagen vectorial basado en XML.<br>Es un estándar abierto y cómo realmente es texto se puede buscar e indexar.</p>
+						<p>Es un formato de imagen vectorial basado en XML.<br>Es un formato abierto y cómo es texto se puede buscar e indexar, por ejemplo.</p>
 					</div>
 					<!-- .end .wrap -->
+				</section>
+				<section>
+					<div class="wrap aligncenter">
+						<h2>Veamos algunos elementos básicos</h2>
+						<div class="content-center">
+							<ul class="flexblock specs">
+								<li>
+									<h5><strong>Etiqueta SVG</strong></h5>
+									<pre>
+&lt;svg width="WW" height="HH" viewbox="0 0 WW HH"&gt;···&lt;/svg&gt;
+									</pre>
+									<p>Dentro de esta etiqueta definimos nuestra imagen vectorial. El alto y el ancho dicen a qué tamaño se tiene que mostrar mientras que el viewbox dice qué área se va a ver.</p>
+								</li>
+								<li>
+									<h5><strong>Recuadro</strong></h5>
+									<pre>
+&lt;rect x="XX" y="YY" width="WW" height="HH" /&gt;
+									</pre>
+									<p>Con los atributos x e y indicamos en qué posición estará mientras que con el ancho y el alto decimos el tamaño que va a tener.</p>
+								</li>
+								<li>
+									<h5><strong>Círculo</strong></h5>
+									<pre>
+&lt;circle cx="..." cy="..." r="..." /&gt;
+									</pre>
+									<p>Ligeramente diferente que el rectángulo; Con cx y cy indicamos la posición del centro y con r, el radio de nuestro círculo</p>
+								</li>
+								<li>
+									<h5><strong>Texto</strong></h5>
+									<pre>
+&lt;text x="XX" y="YY"&gt;···&lt;/text&gt;
+									</pre>
+									<p>Tampoco hay mucha sorpresa aquí: x e y indican la posición y el texto va incluído en la etiqueta</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 				<section>
 					<!--.wrap = container (width: 90%) -->
@@ -158,7 +193,7 @@
 
 						</div>
 
-						<p><a href="https://codepen.io/oneeyedman/pen/aJxeNa">Ejemplo en Codepen</a></p>
+						<p><a href="https://codepen.io/oneeyedman/pen/aJxeNa" tsrget="_blank">Ejemplo en Codepen</a></p>
 
 					</div>
 					<!-- .end .wrap -->
@@ -180,7 +215,7 @@
 									<h3>
 										Compatibilidad
 									</h3>
-									Cualquier navegador medianamente actual lo soporta: <a href="http://caniuse.com/#search=svg">Can I use SVG?</a>.
+									Cualquier navegador medianamente actual lo soporta: <a href="http://caniuse.com/#search=svg" target="_blank">Can I use SVG?</a>.
 								</div>
 							</li>
 							<li>
@@ -198,32 +233,58 @@
 				<section>
 					<div class="wrap aligncenter">
 						<h2>Cómo se usa</h2>
-						<ul class="flexblock border">
-							<li>
-								<div>
-									<h3>
-										Como una imagen normal
-									</h3>
-									Con su etiqueta &lt;img&gt; y todo.
-								</div>
-							</li>
-							<li>
-								<div>
-									<h3>
-										Por css como background
-									</h3>
-									Funciona igual y puedes hacer tus sprites de imágenes.
-								</div>
-							</li>
-							<li>
-								<div>
-									<h3>
-										Incluido en el html
-									</h3>
-									En el fondo es un XML y lo puedes incrustar en tu código.
-								</div>
-							</li>
-						</ul>
+						<h3>
+							<strong>1. Como una imagen normal</strong>
+						</h3>
+						<p>Con su etiqueta &lt;img&gt; y todo.</p>
+						<pre>
+&lt;img src="imagen.svg"/&gt;
+						</pre>
+					</div>
+				</section>
+				<section>
+					<div class="wrap aligncenter">
+						<h2>Cómo se usa</h2>
+						<h3>
+							<strong>2. Como background por CSS</strong>
+						</h3>
+						<p>Funciona igual y puedes hacer tus sprites de imágenes.</p>
+						<pre>
+.icon {
+	background: url(path/to/imagen.svg) left top no-repeat;
+}
+&lt;div class="icon" &gt;Twitter&lt;/div&gt;
+						</pre>
+					</div>
+				</section>
+				<section>
+					<div class="wrap aligncenter">
+						<h2>Cómo se usa</h2>
+						<h3>
+							<strong>3. Incluido en el html</strong>
+						</h3>
+						<p>En el fondo es un XML y lo puedes incrustar en tu código tal cual.</p>
+						<pre>
+&lt;a href=""&gt;
+	&lt;svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+		&lt;g id="Page-1" fill-rule="evenodd"&gt;
+			&lt;g id="twitter" fill="#4A90E2"&gt;
+				&lt;path d="M16,2.57842783 C15.4121031,2.84615385 14.7791278,3.02720597 14.1151611,3.1081016 C14.7932148,2.69206693 15.3134942,2.03238233 15.5586077,1.24653906 C14.9237542,1.63175635 14.2222222,1.91200193 13.4727945,2.06223667 C12.8755063,1.40833032 12.0218348,1 11.0770676,1 C9.26548101,1 7.79573869,2.50716263 7.79573869,4.36583604 C7.79573869,4.62970988 7.82391266,4.88587938 7.88026061,5.13241844 C5.15208077,4.99181413 2.73381464,3.65318406 1.11381112,1.61442157 C0.831132242,2.11327796 0.669601456,2.69206693 0.669601456,3.30841459 C0.669601456,4.47562297 1.24904619,5.50607921 2.12995246,6.10990731 C1.59276868,6.09353557 1.08563714,5.9404117 0.642366614,5.69002046 L0.642366614,5.73143132 C0.642366614,7.36282653 1.77402125,8.7236066 3.27663321,9.03178043 C3.00146739,9.11074997 2.71127546,9.15023474 2.4116922,9.15023474 C2.20038739,9.15023474 1.99377825,9.13001083 1.79374303,9.09052606 C2.21165698,10.42723 3.42313788,11.4008667 4.86001057,11.4268689 C3.73680812,12.3302034 2.32059635,12.8685446 0.783236485,12.8685446 C0.518401127,12.8685446 0.256383166,12.8531359 0,12.8223185 C1.45283794,13.7757313 3.17896343,14.3333333 5.03187181,14.3333333 C11.0704936,14.3333333 14.3715443,9.20512821 14.3715443,4.75683159 C14.3715443,4.61044902 14.3687269,4.46406645 14.3630921,4.32057301 C15.0045196,3.8457927 15.5614251,3.25352113 16,2.57842783"&gt;&lt;/path&gt;
+			&lt;/g&gt;
+		&lt;/g&gt;
+	&lt;/svg&gt;
+	Twitter
+&lt;/a&gt;
+
+---
+
+&lt;a href=""&gt;
+	&lt;svg class="fa-twitter"&gt;
+		&lt;use xlink:href="#fa-twitter"&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+	Twitter
+&lt;/a&gt;
+						</pre>
 					</div>
 				</section>
 				<section>
@@ -240,17 +301,31 @@
 					<!--.wrap = container (width: 90%) -->
 					<div class="wrap aligncenter">
 						<h2>Vale, y esto cómo lo trabajo</h2>
-						<p>Lo suyo es trabajarlo con un programa de dibujo como Inkscape (que es gratuito y multiplataforma).</p>
-						<p>Hay alternativas de pago como <a href="https://affinity.serif.com/en-gb/">Affinity Designer</a>, <a href="www.adobe.com/es/products/illustrator.html">Illustrator</a>, <a href="https://www.sketchapp.com">Sketch</a>.</p>
+						<p>Lo suyo es trabajarlo con un programa de dibujo como <a href="https://inkscape.org/es/" targt="_blank">Inkscape</a> (que es gratuito y multiplataforma).</p>
+						<p>Hay alternativas de pago como <a href="https://affinity.serif.com/en-gb/" target="_blank">Affinity Designer</a>, <a href="www.adobe.com/es/products/illustrator.html" target="_blank">Illustrator</a>, <a href="https://www.sketchapp.com" target="_blank">Sketch</a>.</p>
 					</div>
 					<!-- .end .wrap -->
 				</section>
 				<section>
 					<!--.wrap = container (width: 90%) -->
 					<div class="wrap aligncenter">
+						<h2><strong>¿Un libro para profundizar?</strong></h2>
+						<p><a href="https://twitter.com/jorgeATGU" target="blank">Jorge Aznar</a> Tiene ha escrito <strong>SCALABLE</strong> en la que da un repaso al formato:</p>
+						<p><strong><a href="http://leanpub.com/scalable/" target="_blank">http://leanpub.com/scalable/</a></strong></p>
+						<hr>
+					<div class="content-center">
+							<p>Y además tiene la versión web:</p>
+							<a href="http://jorgeatgu.com/scalable/" traget="_blank"><strong>http://jorgeatgu.com/scalable/</strong></a>
+					</div>
+
+					<!-- .end .wrap -->
+				</section>
+				<section>
+					<!--.wrap = container (width: 90%) -->
+					<div class="wrap aligncenter">
 						<h2><strong>¿Un curso online para profundizar?</strong></h2>
-						<p>Ahora mismo hay uno muy bueno en domestika que lo da <a href="https://twitter.com/htmlboy">Javier Usobiaga</a></p>
-						<p><strong><a href="https://www.domestika.org/es/courses/169-graficos-vectoriales-svg-ilustrar-y-animar-con-codigo/htmlboy">https://www.domestika.org/es/courses/169-graficos-vectoriales-svg-ilustrar-y-animar-con-codigo/htmlboy</a></strong></p>
+						<p>Ahora mismo hay uno muy bueno en domestika que lo da <a href="https://twitter.com/htmlboy" target="blank">Javier Usobiaga</a></p>
+						<p><strong><a href="https://www.domestika.org/es/courses/169-graficos-vectoriales-svg-ilustrar-y-animar-con-codigo/htmlboy" target="_blank">https://www.domestika.org/es/courses/169-graficos-vectoriales-svg-ilustrar-y-animar-con-codigo/htmlboy</a></strong></p>
 					<div class="grid">
 						<div class="column"></div>
 						<div class="column">
