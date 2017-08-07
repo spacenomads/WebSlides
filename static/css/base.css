@@ -2964,7 +2964,10 @@ img[class*="avatar-"] {
 img[class*="avatar-"] {
   border-radius: 50%
 }
-
+img.avatar-200 {
+	width: 200px;
+  height: 200px;
+}
 img.avatar-80 {
   width: 80px;
   height: 80px;
